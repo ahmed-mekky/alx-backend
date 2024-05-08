@@ -25,7 +25,10 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        if type(page) is not int or type(page_size) is not int or page * page_size <= 0:
+        """pagination func"""
+        if type(page) is not int or type(page_size) is not int:
+            raise AssertionError
+        if page * page_size <= 0:
             raise AssertionError
 
         assert page > 0 and page_size > 0
