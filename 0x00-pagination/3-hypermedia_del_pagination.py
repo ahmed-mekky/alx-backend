@@ -53,7 +53,6 @@ class Server:
                 data.append(self.indexed_dataset()[i])
             else:
                 next_index += 1
-        print(total_items)
         return {'index': index,
                 'next_index': next_index,
                 'page_size': page_size,
