@@ -44,10 +44,10 @@ class Server:
         total_items = len(self.__dataset)
 
         assert index >= 0 and index <= total_items
+        next_index = index + page_size
         data = []
         for indexed in self.__dataset[index:]:
             if len(data) == page_size:
-                next_index = self.__dataset.index(indexed)
                 break
             if indexed:
                 data.append(indexed)
