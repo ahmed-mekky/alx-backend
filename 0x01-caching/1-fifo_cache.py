@@ -10,7 +10,7 @@ class FIFOCache(BaseCaching):
         """puts an item"""
         if item and key:
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                self.cache_data.popitem(last=False)
+                self.cache_data.pop(next(iter(self.cache_data)))
             self.cache_data[key] = item
 
     def get(self, key):
