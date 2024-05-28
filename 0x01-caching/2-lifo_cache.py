@@ -10,7 +10,8 @@ class LIFOCache (BaseCaching):
         """puts an item"""
         if item and key:
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                self.cache_data.popitem()
+                last_item = self.cache_data.popitem()
+                print(f'DISCARD: {last_item}')
             self.cache_data[key] = item
 
     def get(self, key):
