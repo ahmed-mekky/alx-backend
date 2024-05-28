@@ -2,7 +2,7 @@
 """ BasicCache module"""
 from basic_cache import BaseCaching
 
-class BasicCache (BaseCaching):
+class BasicCache(BaseCaching):
     """Basic Cache"""
 
     def put(self, key, item):
