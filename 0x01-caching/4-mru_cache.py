@@ -14,7 +14,7 @@ class MRUCache(BaseCaching):
         """puts an item"""
         if item and key:
             if (len(self.cache_data) >= BaseCaching.MAX_ITEMS and
-                not key in self.cache_data.keys()):
+               key not in self.cache_data.keys()):
                 list_item = self.used_list.pop(0)
                 self.cache_data.pop(list_item)
                 print(f'DISCARD: {list_item}')
@@ -22,7 +22,6 @@ class MRUCache(BaseCaching):
             if key in self.used_list:
                 self.used_list.remove(key)
             self.used_list.insert(0, key)
-
 
     def get(self, key):
         """gets an item"""
