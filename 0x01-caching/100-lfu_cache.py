@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""" BasicCache module"""
+""" LFUCache module"""
 from base_caching import BaseCaching
 
 
-class LIFOCache (BaseCaching):
-    """lifo cashing"""
+class LFUCache(BaseCaching):
+    """LFUCache cashing"""
 
     def __init__(self):
         super().__init__()
