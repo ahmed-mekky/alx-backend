@@ -22,7 +22,6 @@ class MRUCache(BaseCaching):
             if key in self.used_list:
                 self.used_list.remove(key)
             self.used_list.insert(0, key)
-            print(self.used_list)
 
 
     def get(self, key):
@@ -30,5 +29,4 @@ class MRUCache(BaseCaching):
         if key in self.cache_data.keys():
             self.used_list.remove(key)
             self.used_list.insert(0, key)
-            print(self.used_list)
             return self.cache_data.get(key)
