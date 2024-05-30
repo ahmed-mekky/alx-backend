@@ -19,10 +19,12 @@ class LFUCache(BaseCaching):
                 self.used_counter.pop(list_item)
                 print(f'DISCARD: {list_item}')
             self.cache_data[key] = item
+            if key in self.used_counter.keys():
+                self.used_counter.pop(key)
             self.used_counter[key] = 0
 
     def get(self, key):
         """gets an item"""
-        if key:
+        if key in self.used_counter.keys():
             self.used_counter[key] += 1
             return self.cache_data.get(key)
